@@ -36,6 +36,10 @@ In this lesson, we built a simple graph, to introduce the core components of Lan
 
 In the notebook ```simplegraph.ipynb```, we built a graph with 4 simple nodes and one conditional edge which tells Mr. Gupta whether he won or lost the lottery.
 
+## Lesson 3: LangSmith Studio
+In this lesson, we visualised the same graph, that we built in ```simplegraph.ipynb```, in LangSmith Studio UI. We played with the graph, ran the graph from the UI and studied the behaviour using the UI as well. 
+The UI provides a much cleaner look and helps in better understanding of the graph.
+
 
 
 
