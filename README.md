@@ -40,8 +40,15 @@ In the notebook ```simplegraph.ipynb```, we built a graph with 4 simple nodes an
 In this lesson, we visualised the same graph, that we built in ```simplegraph.ipynb```, in LangSmith Studio UI. We played with the graph, ran the graph from the UI and studied the behaviour using the UI as well. 
 The UI provides a much cleaner look and helps in better understanding of the graph.
 
+## Lesson 4: Chain
+**Chains** combine 4 core concepts:
 
+1) *Using Chat Messages*: Uses messages to capture different roles within a conversation.
+2) *Using Chat Models*: Chat models can use a sequence of message as input and support message types.
+3) *Binding Tools*: Use tools to give the model awareness of the required input schema.
+4) *Executing Tool Calls*: The model will choose to call a tool based upon the natural language input from the user.
 
+In the notebook ```chain.ipynb``` we demonstrated the given 4 core concepts, where at the very end we made a graph which invokes the tool method (addition and multiplication), whenever the user asks for such task, and will switch to general answers when not needed (in the notebook, I asked about Fifa World Cup 2026).
 
 
 
