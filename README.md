@@ -50,5 +50,20 @@ The UI provides a much cleaner look and helps in better understanding of the gra
 
 In the notebook ```chain.ipynb``` we demonstrated the given 4 core concepts, where at the very end we made a graph which invokes the tool method (addition and multiplication), whenever the user asks for such task, and will switch to general answers when not needed (in the notebook, I asked about Fifa World Cup 2026).
 
+## Lesson 4: Router
+In the previous lesson, we built a graph that uses ```messages``` as state and a chat model with bound tools.
+The graph can:
+
+1) Return a tool call
+2) Return a natural language response 
+
+This can be thought of as a simple **Router**, where the chat model routes between a direct response or a tool call based upon the user input.
+
+In the notebook ```router.ipynb``` we extended the graph to work with either output:
+
+1) Add a node that will call our tool (add, multiply).
+2) Add a conditional edge that will look at the chat model output, and route to our tool calling node or simply end if no tool call is performed.
+
+We even ran it in the LangSmith Studio UI, where we did the same experiment but we can see clearly how the traces were working.
 
 
