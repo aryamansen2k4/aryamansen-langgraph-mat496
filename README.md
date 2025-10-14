@@ -27,11 +27,11 @@ This is where the motivation of using LangGraph comes as it allows us to use age
 ## Lesson 2: Simple Graph
 In this lesson, we built a simple graph, to introduce the core components of LangGraph. 
 
-**Nodes**: Basically python functions. 
-**Edges**: Simply used to connect the nodes.
-**Normal Edge**: The connection/edge with between two nodes.
-**Conditional Edges**: Used when we want to decide whether to go to one node or the other one.
-**States**: The object that we pass between the nodes and edges of our graph.
+1) **Nodes**: Basically python functions. 
+2) **Edges**: Simply used to connect the nodes.
+3) **Normal Edge**: The connection/edge with between two nodes.
+4) **Conditional Edges**: Used when we want to decide whether to go to one node or the other one.
+5) **States**: The object that we pass between the nodes and edges of our graph.
 
 
 In the notebook ```simplegraph.ipynb```, we built a graph with 4 simple nodes and one conditional edge which tells Mr. Gupta whether he won or lost the lottery.
