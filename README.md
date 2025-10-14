@@ -1,4 +1,7 @@
-This github repository is basically a collection of learnings and codes that I have gather and made while following the Introduction to Langgraph course by Langchain.
+This github repository is basically a collection of learnings and codes that I have gather and made while following the Introduction to Langgraph course by Langchain. 
+**All codes in the subsequent modules and lessons are modified codes done by me.**
+
+
 
 # Module 1: Introduction
 In this module, we will dive into *agents*.
@@ -20,6 +23,21 @@ Different kinds of Agents:
 
 However, as we go from less control to more control, the reliability drops.
 This is where the motivation of using LangGraph comes as it allows us to use agents that maintain reliability.
+
+## Lesson 2: Simple Graph
+In this lesson, we built a simple graph, to introduce the core components of LangGraph. 
+
+**Nodes**: Basically python functions. 
+**Edges**: Simply used to connect the nodes.
+**Normal Edge**: The connection/edge with between two nodes.
+**Conditional Edges**: Used when we want to decide whether to go to one node or the other one.
+**States**: The object that we pass between the nodes and edges of our graph.
+
+
+In the notebook ```simplegraph.ipynb```, we built a graph with 4 simple nodes and one conditional edge which tells Mr. Gupta whether he won or lost the lottery.
+
+
+
 
 
 
