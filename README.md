@@ -66,4 +66,25 @@ In the notebook ```router.ipynb``` we extended the graph to work with either out
 
 We even ran it in the LangSmith Studio UI, where we did the same experiment but we can see clearly how the traces were working.
 
+## Lesson 6: Agent
+In this previous lesson we built a router where:
+
+1) Our chat model will decide to make a tool call or not based upon the user input.
+2) We use a conditional edge to route to a node that will call our tool or simply end
+
+In this lesson, we extended this router to a *generic agent architecture*.
+We did this by simply passing the ```ToolMessage``` back to the model itself.
+Hence we can either:
+
+1) call another tool or
+2) respond directly.
+
+This is the intuition/idea behind ReAct, which is a general agent architecture.
+Below are some terms we learnt.
+
+1) ```act```: let the model call specific tools
+2) ```observe```: pass the tool output back to the model
+3) ```reason```: let the model reason about the tool output to decide what to do next
+
+In the notebook ```agent.ipynb```, we made an agent having all the basic arithmetic tools (addition, subtraction, multiplication and division). We went to our project in LangSmith UI and analysed the traces of this agent.
 
