@@ -88,3 +88,12 @@ Below are some terms we learnt.
 
 In the notebook ```agent.ipynb```, we made an agent having all the basic arithmetic tools (addition, subtraction, multiplication and division). We went to our project in LangSmith UI and analysed the traces of this agent.
 
+## Lesson 7: Agent with Memory
+In this lesson, we simply extend our agent (made in the previous lesson) by introducing *memory*.
+
+**Problem**: When a new invokation is being done by the graph, it doesn't remember the result of the previous invokation. Hence if we want to use the result from the previous invokation, we have to write it ourselves
+
+**Solution**: Use memory checkpointers like ```MemorySaver``` to save the graph state after each step and this gives the agent memory.
+
+In the notebook ```agentmemory.ipynb```, I used the agent as in the previous lesson except I used new invokations so to show that each time the memory saves the result and then uses it in the new invokation.
+We analyse the same result in LangSmith UI. Note that in LangSmith UI we used the code without ```MemorySaver``` because LangSmith UI is backed up by LangGraph which by default uses memory, hence checkpoints like ```MemorySaver``` is not needed.
