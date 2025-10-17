@@ -97,3 +97,9 @@ In this lesson, we simply extend our agent (made in the previous lesson) by intr
 
 In the notebook ```agentmemory.ipynb```, I used the agent as in the previous lesson except I used new invokations so to show that each time the memory saves the result and then uses it in the new invokation.
 We analyse the same result in LangSmith UI. Note that in LangSmith UI we used the code without ```MemorySaver``` because LangSmith UI is backed up by LangGraph which by default uses memory, hence checkpoints like ```MemorySaver``` is not needed.
+
+# Module 2: State and Memory
+In this module we learnt about the concept of memory and to add persistence to our graph.
+
+Memory is important as memory is a central component in building agentic application with a high quality user experience, because users expect the agent to recal previous interactions.
+
