@@ -103,3 +103,19 @@ In this module we learnt about the concept of memory and to add persistence to o
 
 Memory is important as memory is a central component in building agentic application with a high quality user experience, because users expect the agent to recal previous interactions.
 
+## Lesson 1: State Schema
+In this lesson we learnt about state and memory more in depth.
+
+**State Schema**: Represents the structure and types of data that our graph will use. All nodes in the graph are expected to communicate with that schema.
+
+We used ```TypedDict``` which is a dictionary subclass from Python's library. It allows us to specify the keys and their corresponding value types. They can be used by IDEs to catch potential type-related errors before the code is run. However they are not enforced at run time.
+
+**Dataclasses**: Dataclasses offer a concise syntax for creating classes that are primarily used to store data. Python's dataclasses provide another way to define structured data.
+
+Since they dont enforce types at runtime, we could potentially assign invalid values without raising an error which is a problem.
+
+*Solution*: **Pydantic**
+
+**Pydantic**: It is a data validation and settings management library using Python type annotations. Pydantic can perform validation to check whether data conforms to the specified types and constraints at runtime.
+
+In the notebook ```stateschema.ipynb```, we have demonstrated each concept using a simple situation where a user has either won, lost, or drawn a game.
