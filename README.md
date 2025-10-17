@@ -119,3 +119,18 @@ Since they dont enforce types at runtime, we could potentially assign invalid va
 **Pydantic**: It is a data validation and settings management library using Python type annotations. Pydantic can perform validation to check whether data conforms to the specified types and constraints at runtime.
 
 In the notebook ```stateschema.ipynb```, we have demonstrated each concept using a simple situation where a user has either won, lost, or drawn a game.
+
+## Lesson 2: State Reducers
+In this lesson, we learnt about reducers.
+
+By default, LangGraph does not know the preferred way to update the state, hence it will just overwrite the value of a variable in node. 
+
+In *Cell 4* we have an invalid update error as Node 2 and Node 3 are running parallely and in both cases the variable ```foo``` is getting incremented by 2. This leads to ambiguity as both attempt to overwrite the state within the same step. So which state should it keep?
+
+*Solution*: **Reducers**
+**Reducers**: Specify how the state updates are performed on specific keys/channels in the state schema.
+Eg: ```operator.add```
+
+We can even have certain cases where the input value is invalid given the current reducer. This motivates the need to use *Custom Reducers* sometimes
+
+In this notebook ```statereducers.ipynb```, we demonstrated the workings of Reducers and Custom Reducers as well ```MessagesStates``` from LangGraph
