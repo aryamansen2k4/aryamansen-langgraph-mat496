@@ -133,4 +133,23 @@ Eg: ```operator.add```
 
 We can even have certain cases where the input value is invalid given the current reducer. This motivates the need to use *Custom Reducers* sometimes
 
-In this notebook ```statereducers.ipynb```, we demonstrated the workings of Reducers and Custom Reducers as well ```MessagesStates``` from LangGraph
+In the notebook ```statereducers.ipynb```, we demonstrated the workings of Reducers and Custom Reducers as well ```MessagesStates``` from LangGraph.
+
+## Lesson 3: Multiple Schemas
+In this lesson, we learn a few ways to customize graphs with multiple schemas.
+
+Normally, all graph nodes communicate with a single schema which contains the graph's input and output keys/channels.
+However there are cases where we need a bit more control:
+
+1) Internal nodes may pass information that is not required in the graph's input / output.
+
+2) We may also want to use different input / output schemas for the graph. The output might, for example, only contain a single relevant output key.
+
+By default, ```StateGraph``` takes in a single schema and all nodes are expected to communicate with that schema.
+However, it is also possible to define explicit input and output schemas for a graph.
+
+In most of the cases we define an *internal* schema that contains all keys relevant to graph operations.
+In addition, we can use a type hint state: ```InputState``` to specify the input schema of each of our nodes.
+
+In the notebook ```multipleschemas.ipynb```, we demonstrated the concept of multiple schemas by using ```InputState```, ```OutputState``` and ```OverallState```. 
+
