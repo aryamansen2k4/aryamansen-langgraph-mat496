@@ -153,3 +153,16 @@ In addition, we can use a type hint state: ```InputState``` to specify the input
 
 In the notebook ```multipleschemas.ipynb```, we demonstrated the concept of multiple schemas by using ```InputState```, ```OutputState``` and ```OverallState```. 
 
+## Lesson 4: Trim and Filters Messages
+In this lesson, we learn about more ways to work with messages in graph state.
+
+A practical issue in working with messages is managing long running conversations and being very token intensive.
+We have a few ways to address this:
+
+1) ```RemoveMessage``` & ```add_messages``` reducer: Delete message based on their id from message queue. Very nice and simpley way. *(Cell 7 & 8)*
+
+2) **Filtering Messages**: Instead of modifying the graph state, we can just filter the messages we pass to the chat model. *(Cell 9, 10, 11 & 12)*
+
+3) **Trim Messages**: We can also trim the messages based on a set number of tokens. This restricts the message history to a specified number of tokens. While filtering only returns a post-hoc subset of the messages between agents, trimming restricts the number of tokens that a chat model can use to respond. *(Cell 13, 14, 15 & 16)*
+
+In the notebook ```trimfiltermessages.ipynb``` we demonstrated the above methods used to have long running conversations with thet chatbot.
