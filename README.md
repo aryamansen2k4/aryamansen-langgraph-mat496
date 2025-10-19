@@ -166,3 +166,10 @@ We have a few ways to address this:
 3) **Trim Messages**: We can also trim the messages based on a set number of tokens. This restricts the message history to a specified number of tokens. While filtering only returns a post-hoc subset of the messages between agents, trimming restricts the number of tokens that a chat model can use to respond. *(Cell 13, 14, 15 & 16)*
 
 In the notebook ```trimfiltermessages.ipynb``` we demonstrated the above methods used to have long running conversations with thet chatbot.
+
+## Lesson 5: Chatbot with message summarization
+In this lesson, we lear how to use LLM's to produce a running summary of the conversation.
+This helps us in getting a brief yet precise representation of the full conversation, rather than just removing it with ```trimming``` or ```filtering```.
+
+In the notebook ```chatbotsummarization.ipynb```, we demonstrated this incorporation of summarisation into a simple Chatbot. We also equipped the Chatbot with memory, supporting long-running conversations without incurring high token cost / latency. 
+We did by working with ```MemorySaver```,  an in-memory key-value store for Graph state, which is used as a checkpoint to automatically save the graph state after each step. The checkpointer saves the state at each step as a checkpoint. These saved checkpoints can be grouped into a ```thread``` of conversation.
