@@ -173,3 +173,13 @@ This helps us in getting a brief yet precise representation of the full conversa
 
 In the notebook ```chatbotsummarization.ipynb```, we demonstrated this incorporation of summarisation into a simple Chatbot. We also equipped the Chatbot with memory, supporting long-running conversations without incurring high token cost / latency. 
 We did by working with ```MemorySaver```,  an in-memory key-value store for Graph state, which is used as a checkpoint to automatically save the graph state after each step. The checkpointer saves the state at each step as a checkpoint. These saved checkpoints can be grouped into a ```thread``` of conversation.
+
+## Lesson 6: Chatbot with Message Summarization & External DB Memory
+In this lesson, we learnt some more advanced checkpoints that supports external databases, like **Sqlite**.
+
+**Sqlite**: It is a small, fast, highly popular SQL database. If we supply ```:memory:``` it creates an in-memory Sqlite database. But, if we supply a db path, then it will create a database for us.
+
+One main advantage of **sqlite** is that the state is persisted. 
+So suppose if we re-start the notebook kernel, we can still load from Sqlite DB on disk.
+
+In the notebook ```chatbotexternalmemmory.ipynb```, we demonstrated a chatbot using **sqlite**.
