@@ -183,3 +183,34 @@ One main advantage of **sqlite** is that the state is persisted.
 So suppose if we re-start the notebook kernel, we can still load from Sqlite DB on disk.
 
 In the notebook ```chatbotexternalmemmory.ipynb```, we demonstrated a chatbot using **sqlite**.
+
+# Module 3: UX and Human-in-the-Loops
+Some workflows need to "off-load" a certain task to a human and then later allow the agent to pick up from where the human left off.
+In this module we got introduced to the concept of ```breakpoints```, which stop our graph at specific steps in the workflow- and once stopped, we learnt how it can accomplish a variety of tasks. We also demonstrated how to update the graph state with user input.
+
+## Lesson 1: Streaming
+In this lesson we learnt about **streaming**.
+In Langgraph, there are two general ways to stream our graph state:
+
+1) ```.stream```: Sync methods for streaming back results.
+2) ```.astream```: Async methods for streaming back results.
+
+But there are also different streaming modes for graph state:
+
+1) ```values```: This streams the full state of the graph after each node is called.
+2) ```updates```: This streams updates to the state of the graph after each node is called.
+
+Sometimes, we want to stream more than graph state, like commonly tokens are also streamed during chat model calls as they are generated. 
+This can be achieved by using the ```.astream_events``` methods, which streams back events as they happen inside the nodes.
+
+Each event is a dict with a few keys:
+1) ```event```: This is the type of event that is being emitted.
+2) ```name```: This is the name of event.
+3) ```data```: This is the data associated with the event.
+4) ```metadata```: Containslanggraph_node, the node emitting the event.
+
+We can even use ```event['metadata']['langgraph_node']``` to select the node to stream from, as well as use ```event['data']``` to get the actual data for each event. 
+To just get the ```AIMessageChunk```, we use the ```chunk``` key.
+
+In the notebook ```streaming interruption.ipynb``` we demonstrated the different ways and modes to stream as well as streaming tokens and other meta-data.
+
