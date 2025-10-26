@@ -214,3 +214,8 @@ To just get the ```AIMessageChunk```, we use the ```chunk``` key.
 
 In the notebook ```streaminginterruption.ipynb``` we demonstrated the different ways and modes to stream as well as streaming tokens and other meta-data.
 
+## Lesson 2: Breakpoints
+In this lesson, we learnt about **breakpoints**, which is a simple way to stop the graph at specific steps. This helps us in enabling user ```approval``.
+
+In the notebook ```breakpoints.ipynb```, we used to breakpoints to approve the agent to use any of its tools.
+We compiled the graph with ```interrupt_before=["tools"]``` where ```tools``` is our tools node. This means that the execution will be interrupted before the node ```tools```, which executes the tool call.
