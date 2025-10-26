@@ -225,3 +225,24 @@ In this lesson, we learnt to how to actually the edit the graph state once it st
 ```breakpoints``` are used to wait for user approval, but they also provide the opportunity to **modify the graph state*.
 
 In the notebook ```editstatehumanfeedback.ipynb``` we demonstrated how to modify the graph state once ```breakpoints``` are used by applying a state update using ```update_state``` with a new message. The ```add_messages``` reducer appends it to our state key, ```messages```. We then further edit our agent state so to allow for human feedback to perform this state update, by using a node that **serves as a placeholder for human feedback** within our agent. The ```human_feedback``` node allow the user to add feedback directly to state. We then specify the breakpoint using ```interrupt_before``` our ```human_feedback``` node.
+
+## Lesson 4: Dynamic Breakpoints
+In the previous lessons, we discussed the following things which act as motivations for human-in-the-loop:
+
+1) **Approval** - We can interrupt our agent, surface state to a user, and allow the user to accept an action.
+
+(2) **Debugging** - We can rewind the graph to reproduce or avoid issues.
+
+(3) **Editing** - We can modify the state.
+
+We also covered ```breakpoints``` as a general way to stop the graph at specific steps, which enables use-cases like ```Approval```.
+
+But sometimes, it is helpful to allow the graph **dynamically** interrupt** itself.  This is an *internal* breakpoint and can be achieved using ```NodeInterrupt```.
+Few specific benifits of it are:
+
+(1) you can do it conditionally, i.e, from inside a node based on developer-defined logic.
+
+(2) you can communicate to the user why its interrupted by passing whatever you want to the ```NodeInterrupt```.
+
+In the notebook ```dynamicbreakpoints.ipynb```, we demonstrated the dynamic breakpoint by creating a graph where a ```NodeInterrupt``` is thrown when a input of length more than 3 characters are is received.
+
