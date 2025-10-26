@@ -246,3 +246,27 @@ Few specific benifits of it are:
 
 In the notebook ```dynamicbreakpoints.ipynb```, we demonstrated the dynamic breakpoint by creating a graph where a ```NodeInterrupt``` is thrown when a input of length more than 3 characters are is received.
 
+## Lesson 5: Time Travel
+In the previous lessons we discussed the motivations which are:
+
+1) **Approval** - We can interrupt our agent, surface state to a user, and allow the user to accept an action.
+
+(2) **Debugging** - We can rewind the graph to reproduce or avoid issues.
+
+(3) **Editing** - We can modify the state.
+
+We also show how  breakpoints can stop the graph at specific nodes or allow the graph to dynamically interrupt itself.
+Then we showed how to proceed with human approval or directly edit the graph state with human feedback.
+
+In this lesson, we learnt how LangGraph supports **debugging** by viewing, replaying, and forking from the past states.
+This is also known as **Time Travel**.
+
+1) **Browsing History**: We can use ```get_state``` to look at the current state of our graph, given the ```thread_id```. We can even browse the state histoy of our agent by using ```get_stat_history```.
+
+2) **Replaying**: We can re-run our agent from any of the prior steps by using ```to_replay``` and look at the state using ```to_replay.values```. We can even see the next node call using ```to_replay.next``` as well as get the config, which tell us the ```checkpoint_id``` as well as the ```thread_id```.
+
+3) **Forking**: Forking is a process which we use if want to run from that same state, but with a different input. We can use do the same things, that we did in replaying, in fork by instead of using ```to_replay``` we use ```to_fork```. After forking we can just modify the state by running ```update_state``` with the ```checkpoint_id``` supplied.
+
+In the notebook ```timetravel.ipynb``` we demonstrated all these methods to agent which uses tools to perform some arithmetic functions.
+
+
