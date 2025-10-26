@@ -212,5 +212,5 @@ Each event is a dict with a few keys:
 We can even use ```event['metadata']['langgraph_node']``` to select the node to stream from, as well as use ```event['data']``` to get the actual data for each event. 
 To just get the ```AIMessageChunk```, we use the ```chunk``` key.
 
-In the notebook ```streaming interruption.ipynb``` we demonstrated the different ways and modes to stream as well as streaming tokens and other meta-data.
+In the notebook ```streaminginterruption.ipynb``` we demonstrated the different ways and modes to stream as well as streaming tokens and other meta-data.
 
