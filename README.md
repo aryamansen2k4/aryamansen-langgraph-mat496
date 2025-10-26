@@ -219,3 +219,9 @@ In this lesson, we learnt about **breakpoints**, which is a simple way to stop t
 
 In the notebook ```breakpoints.ipynb```, we used to breakpoints to approve the agent to use any of its tools.
 We compiled the graph with ```interrupt_before=["tools"]``` where ```tools``` is our tools node. This means that the execution will be interrupted before the node ```tools```, which executes the tool call.
+
+## Lesson 3: Editing State and Human Feedback
+In this lesson, we learnt to how to actually the edit the graph state once it stopped.
+```breakpoints``` are used to wait for user approval, but they also provide the opportunity to **modify the graph state*.
+
+In the notebook ```editstatehumanfeedback.ipynb``` we demonstrated how to modify the graph state once ```breakpoints``` are used by applying a state update using ```update_state``` with a new message. The ```add_messages``` reducer appends it to our state key, ```messages```. We then further edit our agent state so to allow for human feedback to perform this state update, by using a node that **serves as a placeholder for human feedback** within our agent. The ```human_feedback``` node allow the user to add feedback directly to state. We then specify the breakpoint using ```interrupt_before``` our ```human_feedback``` node.
