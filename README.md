@@ -269,4 +269,22 @@ This is also known as **Time Travel**.
 
 In the notebook ```timetravel.ipynb``` we demonstrated all these methods to agent which uses tools to perform some arithmetic functions.
 
+# Module 4: Building your Assistant
+In the previous modules, we learnt fundamental things like agents, learning how to use memory, and learning how to incorporate human-in-the-loop
+In this module, we learnt to bring all of this together to create our own AI assistant that can do some useful work for us.
+
+## Lesson 1: Parallelization
+In this lesson, we learnt about **parallelization**.
+
+**Problem**: When we build a simple linear graph that over-writes the state at each step, and try to run two states in parallel (by fanning in and fanning out), we will get an error we are writing the two states to the same state key / channel in the same step.
+
+*Hence, when using fan out, we need to be sure that we are using a reducer if steps are writing to the same the channel/key.*
+
+**Solution**: A simple solution is to use ```operator.add```, which is a function from Python's built-in operator module. When ```operator.add``` is applied to lists, it performs list concatenation.
+
+If one parallel path has more steps than the other one, the graph will wait for all of these to be completed before proceeding to the step outside.
+
+However, within each step we don't have specific control over the order of the state updates, so we can use a custom reducer to customize this e.g., *sort state updates*.
+
+In the notebook ```parallelization.ipynb```, we use the above methods to a more realistic example where we gather context from two external sources (ESPN and Web-Search) and have an LLM answer a question regarding the El Classico match which was held on previous Sunday.
 
