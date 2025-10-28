@@ -288,3 +288,14 @@ However, within each step we don't have specific control over the order of the s
 
 In the notebook ```parallelization.ipynb```, we use the above methods to a more realistic example where we gather context from two external sources (ESPN and Web-Search) and have an LLM answer a question regarding the El Classico match which was held on previous Sunday.
 
+## Lesson 2: Sub-graphs
+In this lesson we learnt about **sub-graphs**.
+
+**Sub-Graph**: Sub-graphs allow us to create and manage different states in different parts of your graph. This is very helpful when using multi-agent systems, with teams of agents that each have their own state.
+
+The most important thing to understand is how the graphs communicate, which is done with over-lapping keys:
+
+1) The sub-graphs can access docs from the parent
+2) The parent can access summary/failure_report from the sub-graphs
+
+In the notebook ```subgraphs.ipynb```, we create a simple example, where we have a system that accepts logs and performs two separate sub-tasks by different agents (summarize logs, find failure modes). These two separate sub-tasks are performed in two different sub-graphs.
