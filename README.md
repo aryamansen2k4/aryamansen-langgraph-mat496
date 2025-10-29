@@ -299,3 +299,18 @@ The most important thing to understand is how the graphs communicate, which is d
 2) The parent can access summary/failure_report from the sub-graphs
 
 In the notebook ```subgraphs.ipynb```, we create a simple example, where we have a system that accepts logs and performs two separate sub-tasks by different agents (summarize logs, find failure modes). These two separate sub-tasks are performed in two different sub-graphs.
+
+## Lesson 3: Map Reduce
+In this lesson we learnt about **map reduce**.
+They are very essential for efficient task decomposition and parallel processing and have 2 phases:
+
+1) **Map** - Break a task into smaller sub-tasks, processing each sub-task in parallel.
+
+2) **Reduce** - Aggregate the results across all of the completed, parallelized sub-tasks.
+
+We also learnt ```Send``` operator. ```Send``` allow us to pass any state that we want to a function. It does not have to align with OverallState.
+
+In the notebook ```mapreduce.ipynb``` we used ```map reduce``` to create a system which does two things:
+
+1) Create a set of football statistics of a match *(Map)*.
+2) Using the set, choose the better team *(Reduce)*.
