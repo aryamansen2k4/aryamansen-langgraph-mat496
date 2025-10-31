@@ -314,3 +314,21 @@ In the notebook ```mapreduce.ipynb``` we used ```map reduce``` to create a syste
 
 1) Create a set of football statistics of a match *(Map)*.
 2) Using the set, choose the better team *(Reduce)*.
+
+## Lesson 4: Research Assistant
+In this lesson, we combined everything that we learnt in the previous lessons to build a lightweight, multi-agent system around chat models that customizes the research process.
+This includes the following:
+
+1) **Source Selection** :Users can choose any set of input sources for their research.
+
+2) **Planning**: Users provide a topic, and the system generates a team of AI analysts, each focusing on one sub-topic.
+Human-in-the-loop will be used to refine these sub-topics before research begins.
+
+3) **LLM Utilization**: Each analyst will conduct in-depth interviews with an expert AI using the selected sources.
+
+4) **Research Process**: Experts will gather information to answer analyst questions in parallel.
+
+5) **Output Format**: The gathered insights from each interview will be synthesized into a final report.
+
+In the notebook ```researchassistant.ipynb```, we created an agent instructing it to create different ai analysts, footballers, and coaches. They will be then be tasked to ask questions on a given topic to expert which will basically browse through web pages to gather the material for the given topic and provide a summary. 
+
